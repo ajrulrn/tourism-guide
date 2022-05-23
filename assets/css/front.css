@@ -1,0 +1,120 @@
+body {
+    background-color: #F9F9F9 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-main {
+    /* color: #FFF; */
+    background-color: #121212;
+}
+.bg-secondary {
+    background-color: #202020 !important;
+    color: #FFF;   
+}
+
+.logo-title,
+.logo-subtitle {
+    font-family: 'Signika Negative', sans-serif;
+    margin: 0;
+    color: #FFF;
+}
+.logo-title {
+    font-weight: 400;
+    font-size: 48px;
+}
+.logo-subtitle {
+    font-weight: 400;
+    font-size: 20px;
+}
+.navbar {
+    /* background-color: #f0f0f0; */
+    background-color: #fff;
+}
+.navbar ul li a.nav-link {
+    color: #a09b95 !important
+}
+
+.navbar ul li a.nav-link.active {
+    color: #fc9b0e !important
+}
+.nav-link {
+    padding-bottom: 0;
+}
+.text-menu {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 200;
+}
+.text-star {
+    color: #fc9b0e;
+}
+input:focus,
+textarea:focus {
+    color: #878787 !important;
+    box-shadow: none !important;
+}
+.input-search {
+    border: none !important;
+    border-radius: 50em 0 0 50em !important;
+}
+.input-search:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+.input-search:focus + button.btn-search {
+    color: #fc9b0e !important;
+    border : none !important;
+}
+.btn-search {
+    border: none !important;
+    background-color: #fff !important;
+    border-radius: 0 50em 50em 0 !important;
+    color: #ced4da !important;
+}
+.btn-search:hover {
+    background-color: #fff !important;
+    color: #ced4da !important;
+}
+.btn-search:focus {
+    box-shadow: none !important;
+}
+.card-destination {
+    box-shadow: 3px 1px 20px 1px #bababa;
+}
+.greeting-title,
+.greeting-subtitle {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+}
+.loader3 {
+    width:50px;
+    height:50px;
+    display:inline-block;
+    padding:0px;
+    text-align:left;
+}
+.loader3 span {
+    position:absolute;
+    display:inline-block;
+    width:50px;
+    height:50px;
+    border-radius:100%;
+    background: #3f3f3f;
+    -webkit-animation:loader3 .7s linear infinite;
+    animation:loader3 .7s linear infinite;
+}
+.loader3 span:last-child {
+    animation-delay:-0.9s;
+    -webkit-animation-delay:-0.9s;
+}
+@keyframes loader3 {
+    0% {transform: scale(0, 0);opacity:0.8;}
+    100% {transform: scale(1, 1);opacity:0;}
+}
+@-webkit-keyframes loader3 {
+    0% {-webkit-transform: scale(0, 0);opacity:0.8;}
+    100% {-webkit-transform: scale(1, 1);opacity:0;}
+}
