@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 
     public function authenticate()
     {
-        $authenticate = $this->Auth_m->login();
+        $authenticate = Auth_m::login();
         if (!$authenticate) redirect('login');
 
         if (current_user()->level_id == ADMIN) redirect('dashboard');

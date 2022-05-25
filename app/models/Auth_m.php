@@ -39,7 +39,7 @@ class Auth_m extends CI_Model {
         if (!$this->session->has_userdata(SESSION_KEY)) return null;
 
         $user_id    = $this->session->userdata(SESSION_KEY);
-        $user       = $this->db->select($this->fillable)->get_where($this->_table, ['id' => $user_id])->row();
+        $user       = $this->db->select($this->fillable)->get_where(self::$table, ['id' => $user_id])->row();
         return $user;
     }
 
