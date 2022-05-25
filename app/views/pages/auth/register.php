@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/images/favicon/favicon.ico">
-
-<!-- Libs CSS -->
-
-<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/prismjs/themes/prism.css">
-<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/prismjs/plugins/line-numbers/prism-line-numbers.css">
-<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/prismjs/plugins/toolbar/prism-toolbar.css">
-<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/bootstrap-icons/font/bootstrap-icons.css">
-<link rel="stylesheet" href="<?= base_url(); ?>assets/libs/dropzone/dist/dropzone.css" >
-<link href="<?= base_url(); ?>assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-
-
-
-
-
-
-<!-- Theme CSS -->
-<link rel="stylesheet" href="<?= base_url(); ?>assets/css/theme.min.css">
-  <title>Sign Up | Dash Ui - Bootstrap 5 Admin Dashboard Template</title>
-</head>
-
-<body>
+<?php $this->load->view('partials/_header'); ?>
   <!-- container -->
   <div class="container d-flex flex-column">
     <div class="row align-items-center justify-content-center g-0
@@ -48,7 +14,12 @@
 
             </div>
             <!-- Form -->
-            <form>
+            <form action="<?= base_url('register/store'); ?>" method="post">
+              <!-- Name -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" required="">
+              </div>
               <!-- Username -->
               <div class="mb-3">
                 <label for="username" class="form-label">User Name</label>
@@ -57,7 +28,7 @@
               <!-- Email -->
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" name="email" placeholder="Email address here" required="">
+                <input type="text" id="email" class="form-control" name="email" placeholder="Email address here" required="">
               </div>
               <!-- Password -->
               <div class="mb-3">
@@ -68,12 +39,12 @@
               <div class="mb-3">
                 <label for="confirm-password" class="form-label">Confirm
                     Password</label>
-                <input type="password" id="confirm-password" class="form-control" name="password" placeholder="**************" required="">
+                <input type="password" id="confirm-password" class="form-control" name="confirm_password" placeholder="**************" required="">
               </div>
               <!-- Checkbox -->
               <div class="mb-3">
                 <div class="form-check custom-checkbox">
-                  <input type="checkbox" class="form-check-input" id="agreeCheck">
+                  <input type="checkbox" name="terms" class="form-check-input" id="agreeCheck">
                   <label class="form-check-label" for="agreeCheck"><span
                         class="fs-5">I agree to the <a
                           href="terms-condition-page.html">Terms of
