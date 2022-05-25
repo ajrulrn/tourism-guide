@@ -164,7 +164,7 @@ class Destination_m extends CI_Model {
     {
         $total_rows = $this->db->get_where('ratings', ['destination_id' => $destination_id])->num_rows();
         if (!$total_rows || $total_rows < 1) return 'Belum ada penilaian';
-        $ratings    = $this->db->select_sum('rating')->get_where('ratings', ['destination_id' => $destination_id])->row()->rating;
+        $ratings    = $this->db->select_sum('rate')->get_where('ratings', ['destination_id' => $destination_id])->row()->rate;
         $rating     = $ratings / $total_rows;
         return $rating;
     }
