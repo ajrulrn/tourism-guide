@@ -73,45 +73,41 @@
                     </div>
                 </div> -->
                 <div class="col-12 mb-3">
-                    <a href="<?= base_url('asd'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-12">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary">2 Person</p>
-                                    <p class="m-0 text-secondary">23 Mei 2022</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-warning text-dark-warning">Siap diproses</p>
+                    <div class="card p-3">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12">
+                                <p class="m-0 text-secondary fw-bold"><?= $transaction->id; ?></p>
+                                <p class="m-0 text-secondary"><?= $transaction->destination; ?></p>
+                                <p class="m-0 text-secondary"><?= $transaction->num_of_tourist; ?> Person</p>
+                                <p class="m-0 text-secondary"><?= date('d M Y', strtotime($transaction->trip_date)); ?></p>
+                                <p class="m-0 text-secondary fs-6 badge 
+                                <?php if ($transaction->status == 'SUCCESS') : ?>
+                                bg-light-success text-dark-success
+                                <?php elseif($transaction->status == 'Dibatalkan') : ?>
+                                bg-light-danger text-dark-danger
+                                <?php else : ?>
+                                bg-light-warning text-dark-warning
+                                <?php endif; ?>
+                                "><?= $transaction->status; ?></p>
+                                <?php if($transaction->status != 'SUCCESS' && $transaction->status != 'Dibatalkan') : ?>
                                     <div class="d-grid mt-3">
+                                        <?php if ($transaction->status == 'Siap diproses') : ?>
                                         <a href="#" class="btn btn-sm rounded border-secondary">Batalkan</a>
                                         <a href="#" class="mt-1 btn btn-primary btn-sm rounded">Mulai Perjalanan</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 mb-3">
-                    <a href="<?= base_url('asd'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-12">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary">2 Person</p>
-                                    <p class="m-0 text-secondary">21 Mei 2022</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-warning text-dark-warning">Sedang Berlangsung</p>
-                                    <div class="d-grid mt-3">
+                                        <?php endif; ?>
+                                        <?php if ($transaction->status == 'Sedang Berlangsung') : ?>
                                         <a href="#" class="btn border-secondary btn-sm rounded">
                                             <i data-feather="message-circle" class="nav-icon icon-xs pb-1"></i> Chat
                                         </a>
                                         <a href="#" class="mt-1 btn btn-danger btn-sm rounded">Akhiri Perjalanan</a>
+                                        <?php endif; ?>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>

@@ -80,14 +80,23 @@
                         </div>
                     </div>
                 </div> -->
+                <?php foreach($transactions as $item) : ?>
                 <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail'); ?>" class="text-decoration-none text-white">
+                    <a href="<?= base_url('transaction/detail/').$item->id; ?>" class="text-decoration-none text-white">
                         <div class="card p-3 borde border-primary">
                             <div class="row d-flex align-items-center">
                                 <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-warning text-dark-warning">Menunggu Pembayaran</p>
+                                    <p class="m-0 text-secondary fw-bold"><?= $item->id; ?></p>
+                                    <p class="m-0 text-secondary"><?= $item->destination; ?></p>
+                                    <p class="m-0 text-secondary fs-6 badge 
+                                    <?php if ($item->status == 'SUCCESS') : ?>
+                                    bg-light-success text-dark-success
+                                    <?php elseif($item->status == 'Dibatalkan') : ?>
+                                    bg-light-danger text-dark-danger
+                                    <?php else : ?>
+                                    bg-light-warning text-dark-warning
+                                    <?php endif; ?>
+                                    "><?= $item->status; ?></p>
                                 </div>
                                 <!-- <div class="col-6 text-end">
                                     <p class="m-0 text-primary fs-6">Beri Ulasan</p>
@@ -96,72 +105,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3 borde border-primary">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-success text-dark-success">Selesai</p>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <p class="m-0 text-primary fs-6">
-                                        <button type="button" class="btn btn-primary btn-sm rounded">
-                                            Beri Ulasan
-                                        </button>    
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3 borde border-primary">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-success text-dark-success">Selesai</p>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <p class="m-0 text-primary fs-6">
-                                    <button type="button" class="btn btn-primary btn-sm rounded">
-                                        Pesan lagi
-                                    </button>    
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3 borde border-primary">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-danger text-dark-danger">Dibatalkan</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3 borde border-primary">
-                            <div class="row d-flex align-items-center">
-                                <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold">IV#4564</p>
-                                    <p class="m-0 text-secondary">Raja Ampat</p>
-                                    <p class="m-0 text-secondary fs-6 badge bg-light-warning text-dark-warning">Sedang Berlangsung</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <?php endforeach; ?>
             </div>
             <?php else : ?>
             <div class="row mt-20 justify-content-center">

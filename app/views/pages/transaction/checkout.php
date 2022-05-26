@@ -27,18 +27,18 @@
                         <div class="card p-3">
                             <div class="row d-flex align-items-center">
                                 <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold fs-4">Raja Ampat</p>
+                                    <p class="m-0 text-secondary fw-bold fs-4"><?= $transaction->destination; ?></p>
                                     <p class="m-0 text-secondary">2 Person</p>
-                                    <p class="m-0 text-secondary">23 Mei 2022</p>
+                                    <p class="m-0 text-secondary"><?= date('d M Y', strtotime($transaction->trip_date)); ?></p>
                                 </div>
                                 <div class="col-6 text-end">
-                                    <p class="m-0 text-secondary fw-bold fs-5">Rp151,000</p>
+                                    <p class="m-0 text-secondary fw-bold fs-5">Rp<?= number_format($transaction->price * $transaction->num_of_tourist, 0, '', ','); ?></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="d-grid mt-3">
-                                        <a href="#" class="btn btn-sm rounded btn-primary">Bayar</a>
+                                        <a href="<?= base_url('transaction/pay/').$transaction->id; ?>" class="btn btn-sm rounded btn-primary">Bayar</a>
                                     </div>
                                 </div>
                             </div>

@@ -188,31 +188,33 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          <div class="form-group row">
-              <div class="col-12">
-                  <label for="">Jumlah Turis</label>
-                  <select name="" id="" class="form-select">
-                      <?php for($i=$destination->min_tourist; $i <= $destination->max_tourist; $i++) : ?>
-                      <option value="<?= $i; ?>"><?= $i; ?></option>
-                      <?php endfor; ?>
-                  </select>
-              </div>
-          </div>
-          <div class="form-group row mt-2">
-              <div class="col-12">
-                  <label for="">Tanggal</label>
-                  <input type="text" class="bg-white" id="datepicker" autocomplete="off" onkeypress="return false" onkeydown="return false" maxlength="0" readonly>
-              </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" onclick="return window.location.href = 'http://localhost/wamanra/transaction/checkout'" class="btn btn-primary" style="width: 100%;">Checkout</button>
-      </div>
+        <form action="<?= base_url('transaction/store/').$destination->id; ?>" method="post">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label for="">Jumlah Turis</label>
+                        <select name="num_of_tourist" id="" class="form-select">
+                            <?php for($i=$destination->min_tourist; $i <= $destination->max_tourist; $i++) : ?>
+                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                            <?php endfor; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row mt-2">
+                    <div class="col-12">
+                        <label for="">Tanggal</label>
+                        <input type="text" name="trip_date" class="bg-white" id="datepicker" autocomplete="off" onkeypress="return false" onkeydown="return false" maxlength="0" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Checkout</button>
+            </div>
+        </form>
     </div>
   </div>
 </div>
