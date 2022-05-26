@@ -23,8 +23,9 @@
         <link rel="stylesheet" href="<?= base_url(); ?>assets/css/chat.css">
         
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-        <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.0.7/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
-        <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.0.7/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+        <?php if ($this->router->class == 'transaction' && $this->router->method == 'detail') : ?>
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/css/rating.css">
+        <?php endif; ?>
         <title>Wamanra | </title>
     </head>
 <body>

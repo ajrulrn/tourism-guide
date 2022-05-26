@@ -47,3 +47,15 @@ if (!function_exists('province'))
         return $province;
     }
 }
+
+if (!function_exists('is_rated'))
+{
+    function is_rated($transaction_id)
+    {
+        $CI = &get_instance();
+        $CI->load->model('Transaction_m');
+        $Model = $CI->Transaction_m;
+        $result = $Model->check_rate($transaction_id);
+        return $result;
+    }
+}

@@ -153,4 +153,17 @@ class Destination extends CI_Controller {
         Destination_m::unpublish($id);
         redirect('destination');
     }
+
+    public function save_rating($destination_id)
+    {
+        $this->form_validation->set_rules('rating', 'Rating', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $flashdata = '';
+            $this->session->set_flashdata('');
+        }
+        
+        Destination_m::save_rating($destination_id);
+        redirect('transaction');
+    }
 }
