@@ -69,39 +69,20 @@
                 </div> -->
                 <div class="col-12">
                     <div class="card p-3 border">
-                        <a href="<?= base_url('chat/detail'); ?>" class="text-decoration-none text-secondary">
-                        <div class="row mb-3 border-bottom pb-2 d-flex align-items-center">
+                        <?php foreach($chats as $index => $item) : ?>
+                        <a href="<?= base_url('chat/detail/'); ?><?= $item->sender_user_id != $this->session->userdata(SESSION_KEY) ? $item->sender_user_id : $item->receiver_user_id; ?>" class="text-decoration-none text-secondary">
+                            <div class="row <?= count($chats) > 1 ? (count($chats)-1 != $index ? 'mb-3 border-bottom pb-2' : '') : '';?> d-flex align-items-center">
                                 <div class="col-2">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" class="img-flui rounded-circle" width="50" height="50">
+                                    <img src="https://ui-avatars.com/api/?name=<?= $item->sender_user_id != $this->session->userdata(SESSION_KEY) ? urlencode($item->sender) : urlencode($item->receiver); ?>&background=random" alt="" class="img-flui rounded-circle" width="50" height="50">
                                 </div>
                                 <div class="col-10">
-                                    <p class="m-0 fw-bold ps-2">Ajrul Rizqi</p>
+                                    <p class="m-0 fw-bold ps-2"><?= $item->sender_user_id != $this->session->userdata(SESSION_KEY) ? $item->sender : $item->receiver; ?></p>
+                                    <p class="m-0 ps-2"><?= $item->sender_user_id == $this->session->userdata(SESSION_KEY) ? 'You: ' : ''; ?><?= $item->message; ?></p>
                                 </div>
-                            </div>
-                            
-                    </a>
-                    
-                    <a href="<?= base_url('chat/detail'); ?>" class="text-decoration-none text-secondary">
-                            <div class="row mb-3 border-bottom pb-2 d-flex align-items-center">
-                                <div class="col-2">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" class="img-flui rounded-circle" width="50" height="50">
-                                </div>
-                                <div class="col-10">
-                                    <p class="m-0 fw-bold ps-2">Ajrul Rizqi</p>
-                                </div>
-                            </div>
-                    </a>
-                        <a href="<?= base_url('chat/detail'); ?>" class="text-decoration-none text-secondary">
-                            <div class="row border-botto pb- d-flex align-items-center">
-                                <div class="col-2">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" class="img-flui rounded-circle" width="50" height="50">
-                                </div>
-                                <div class="col-10">
-                                    <p class="m-0 fw-bold ps-2">Ajrul Rizqi</p>
-                                </div>
-                            </div>
+                            </div>    
                         </a>
-                        </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

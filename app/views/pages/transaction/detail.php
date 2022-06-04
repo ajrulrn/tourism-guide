@@ -92,7 +92,7 @@
                                     <?php if($transaction->status == 'Menunggu Pembayaran') : ?>
                                     <a href="#" class="btn btn-primary btn-sm rounded">Bayar</a>
                                     <?php elseif ($transaction->status == 'Siap diproses' || $transaction->status == 'Sedang Berlangsung') : ?>
-                                    <a href="#" class="btn border-secondary btn-sm rounded">
+                                    <a href="<?= base_url('chat/detail/').$transaction->destination_user_id; ?>" class="btn border-secondary btn-sm rounded">
                                         <i data-feather="message-circle" class="nav-icon icon-xs pb-1"></i> Chat
                                     </a>
                                     <?php elseif($transaction->status == 'SUCCESS') : ?>

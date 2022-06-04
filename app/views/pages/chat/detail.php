@@ -62,80 +62,82 @@
                                 <a href="<?= base_url('chat'); ?>" class="text-secondary">
                                     <i class="nav-icon icon-xs" data-feather="arrow-left"></i>
                                 </a>
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80" alt="" class="img-flui rounded-circle me-2" width="45" height="45">
-                                <span class="fs-5">Ajrul Rizqi</span>
+                                <img src="https://ui-avatars.com/api/?name=<?= urlencode($receiver->name); ?>&background=random" alt="" class="img-flui rounded-circle me-2" width="45" height="45">
+                                <span class="fs-5"><?= $receiver->name; ?></span>
                             </div>
                         </div>
                         <div class="chat-body pe-1" style="height:50vh; overflow-y: scroll; overflow-x:hidden">
-                        <div class="row mb-2">
-                            <div class="offset-2 col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                            <!-- <div class="row mb-2">
+                                <div class="offset-2 col-10 text-end">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row mb-2">
+                                <div class="col-10">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
+                            </div> -->
+                            <!-- <div class="row mb-2">
+                                <div class="col-10">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                            <div class="row mb-2">
+                                <div class="col-10">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                            <div class="row mb-2">
+                                <div class="offset-2 col-10">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
                             </div>
+                            <div class="row mb-2">
+                                <div class="offset-2 col-10">
+                                    <p class="m-0 text-secondary fs-6">
+                                        <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
+                                        </span>    
+                                    </p>
+                                    <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
+                                </div>
+                            </div> -->
                         </div>
-                        <div class="row mb-2">
-                            <div class="col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-light bg-gradient text-secondary p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="offset-2 col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="offset-2 col-10">
-                                <p class="m-0 text-secondary fs-6">
-                                    <span class="d-inline-block bg-primary bg-gradient text-white p-2 rounded">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis explicabo sunt dolor, velit odio.
-                                    </span>    
-                                </p>
-                                <p class="m-0 text-secondary text-end" style="font-size: .65rem;">6 Mar</p>
-                            </div>
-                        </div>
-                        </div>
+                        <small class="mb-1" id="countingMessage">0/100</small>
                         <div class="row mt-2">
                             <div class="col-10 pe-1">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="message" placeholder="Tulis pesan..." maxlength="100">
+                                <input type="hidden" id="receiver" value="<?= $receiver->id; ?>">
                             </div>
                             <div class="col-2 ps-1">
-                            <button class="btn px- btn-primary" style="box-sizing: border-box;">
-                                <i class="nav-icon icon-xs" data-feather="send" ></i>
-                            </button>
+                                <button class="btn px- btn-primary" id="btn-send" style="box-sizing: border-box;" disabled>
+                                    <i class="nav-icon icon-xs" data-feather="send" ></i>
+                                </button>
                             </div>
                         </div>
                     </div>

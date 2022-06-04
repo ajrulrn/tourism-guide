@@ -38,7 +38,7 @@ class Transaction_m extends CI_Model {
 
     public static function get_by_id($transaction_id)
     {
-        return self::$ci->db->select(self::$table.'.*, destinations.title AS `destination`, destinations.price')
+        return self::$ci->db->select(self::$table.'.*, destinations.title AS `destination`, destinations.price, destinations.user_id AS `destination_user_id`')
         ->from(self::$table)
         ->join('destinations', 'destinations.id = '.self::$table.'.destination_id')
         ->where(self::$table.'.id', $transaction_id)

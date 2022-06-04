@@ -22,6 +22,9 @@
 <script src="<?= base_url() ?>assets/js/region.js"></script>
 <script src="<?= base_url() ?>assets/js/datepicker.js"></script>
 <?php endif; ?>
+<?php if($this->router->class == 'chat' && $this->router->method == 'detail') : ?>
+<script src="<?= base_url(); ?>assets/js/chat.js"></script>
+<?php endif; ?>
 
 <script>
     function addTimeline(target) {

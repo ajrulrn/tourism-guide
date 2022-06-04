@@ -56,6 +56,11 @@ class User_m extends CI_Model {
         ->get()->result();
     }
 
+    public static function get_by_id($id)
+    {
+        return self::$ci->db->get_where(self::$table, ['id' => $id])->row();
+    }
+
     public static function save()
     {
         $post               = self::$ci->input->post();
