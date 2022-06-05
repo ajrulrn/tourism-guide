@@ -82,7 +82,7 @@
                 </div> -->
                 <?php foreach($transactions as $item) : ?>
                 <div class="col-12 mb-3">
-                    <a href="<?= base_url('transaction/detail/').$item->id; ?>" class="text-decoration-none text-white">
+                    <a href="<?= $item->status == 'Menunggu Pembayaran' ? base_url('transaction/checkout/').$item->id : base_url('transaction/detail/').$item->id; ?>" class="text-decoration-none text-white">
                         <div class="card p-3 borde border-primary">
                             <div class="row d-flex align-items-center">
                                 <div class="col-6">
