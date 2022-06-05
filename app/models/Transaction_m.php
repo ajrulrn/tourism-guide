@@ -105,7 +105,8 @@ class Transaction_m extends CI_Model {
 
     public static function update_status($transaction_id, $status)
     {
-        self::$ci->status = $status;
+        self::$ci->status                       = $status;
+        self::$ci->transaction_expiration_date  = null;
         self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
     }
 
