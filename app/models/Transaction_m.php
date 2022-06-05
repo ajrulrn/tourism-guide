@@ -102,4 +102,18 @@ class Transaction_m extends CI_Model {
         if ($transaction) return true;
         return false;
     }
+
+    public static function update_status($transaction_id, $status)
+    {
+        self::$ci->status = $status;
+        self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
+    }
+
+    public static function update_va_number($transaction_id, $va_number, $payment_type)
+    {
+        self::$ci->va_number        = $va_number;
+        self::$ci->status           = 'Pending';
+        self::$ci->payment_method   = $payment_type;
+        self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
+    }
 }

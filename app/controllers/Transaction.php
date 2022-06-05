@@ -7,6 +7,7 @@ class Transaction extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Transaction_m');
+        $this->load->library('Midtrans');
     }
 
     public function index()
@@ -48,9 +49,32 @@ class Transaction extends CI_Controller {
         $this->load->view('pages/transaction/checkout', $data);
     }
 
-    public function pay($transaction_id)
+    public function pay()
     {
-        Transaction_m::pay($transaction_id);
+        $this->form_validation->set_rules('_transaction', 'Transaksi', 'required');
+        if ($this->form_validation->run() === FALSE) {
+            redirect('transaction');
+        }
+        
+        $transaction_id = $this->input->post('_transaction', true);
+        $transaction    = Transaction_m::get_by_id($transaction_id);
+        $body = [
+            'payment_type' => 'bank_transfer',
+            'transaction_details' => [
+                'order_id' => $transaction->id,
+                'gross_amount' => $transaction->subtotal
+            ],
+            'bank_transfer' => [
+                'bank' => 'bca'
+            ]
+        ];
+        Midtrans::request_payment($body);
+        redirect('transaction/detail/'.$transaction_id);
+    }
+
+    public function confirm($transaction_id)
+    {
+        Midtrans::check_status($transaction_id);
         redirect('transaction/detail/'.$transaction_id);
     }
 }

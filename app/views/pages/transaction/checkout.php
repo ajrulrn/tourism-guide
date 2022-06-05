@@ -23,8 +23,8 @@
             </div>
             <div class="row mt-6">
                 <div class="col-12 mb-3">
-                    <a href="<?= base_url('asd'); ?>" class="text-decoration-none text-white">
-                        <div class="card p-3">
+                    <div class="card p-3">
+                        <form action="<?= base_url('transaction/pay'); ?>" method="post">
                             <div class="row d-flex align-items-center">
                                 <div class="col-6">
                                     <p class="m-0 text-secondary fw-bold fs-4"><?= $transaction->destination; ?></p>
@@ -35,16 +35,29 @@
                                     <p class="m-0 text-secondary fw-bold fs-5">Rp<?= number_format($transaction->price * $transaction->num_of_tourist, 0, '', ','); ?></p>
                                 </div>
                             </div>
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <p class="m-0 text-secondary fw-bold fs-4">Metode Pembayaran</p>
+                                    <div class="form-check text-secondary">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            <img src="<?= base_url('assets/images/bca.png'); ?>" alt="" width="100">
+                                        </label>
+                                    </div>
+                                    <input type="hidden" name="_transaction" value="<?= $transaction->id; ?>">
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="d-grid mt-3">
-                                        <a href="<?= base_url('transaction/pay/').$transaction->id; ?>" class="btn btn-sm rounded btn-primary">Bayar</a>
+                                        <button type="submit" href="<?= base_url('transaction/pay/').$transaction->id; ?>" class="btn btn-sm rounded btn-primary">Bayar</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </form>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
