@@ -94,6 +94,7 @@
                                     <img src="<?= base_url('assets/images/BCA.png') ?>" alt="" width="100">
                                 </p>
                                 <p class="m-0">VA Number : <?= $transaction->va_number; ?></p>
+                                <p class="m-0">Bayar sebelum <span class="fw-bold"><?= date('d M Y H:i:s', strtotime($transaction->transaction_expiration_date)); ?></span></p>
                                 <?php endif; ?>
                                 <div class="d-grid mt-2">
                                     <?php if($transaction->status == 'Pending') : ?>
