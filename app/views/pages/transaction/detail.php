@@ -88,9 +88,16 @@
                                     <?php else : ?>
                                     bg-light-warning text-dark-warning
                                     <?php endif; ?>"><?= $transaction->status; ?></p>
+                                <?php if($transaction->status == 'Pending') : ?>
+                                <p class="mt-2 m-0 fw-bold">Metode Pembayaran</p>
+                                <p class="m-0">
+                                    <img src="<?= base_url('assets/images/BCA.png') ?>" alt="" width="100">
+                                </p>
+                                <p class="m-0">VA Number : <?= $transaction->va_number; ?></p>
+                                <?php endif; ?>
                                 <div class="d-grid mt-2">
-                                    <?php if($transaction->status == 'Menunggu Pembayaran') : ?>
-                                    <a href="#" class="btn btn-primary btn-sm rounded">Bayar</a>
+                                    <?php if($transaction->status == 'Pending') : ?>
+                                    <a href="<?= base_url('transaction/confirm/').$transaction->id; ?>" class="btn btn-primary btn-sm rounded">Konfirmasi Pembayaran</a>
                                     <?php elseif ($transaction->status == 'Siap diproses' || $transaction->status == 'Sedang Berlangsung') : ?>
                                     <a href="<?= base_url('chat/detail/').$transaction->destination_user_id; ?>" class="btn border-secondary btn-sm rounded">
                                         <i data-feather="message-circle" class="nav-icon icon-xs pb-1"></i> Chat
