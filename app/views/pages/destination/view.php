@@ -213,7 +213,8 @@
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/unpublish/').$destination->id; ?>" class="btn text-start">Unpublish</a>
                     </div>
-                    <?php else : ?>
+                    <?php endif; ?>
+                    <?php if (!$destination->is_published && $destination->is_have_timeline) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/publish/').$destination->id; ?>" class="btn text-start">Publish</a>
                     </div>
