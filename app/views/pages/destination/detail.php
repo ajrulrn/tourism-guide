@@ -104,7 +104,7 @@
                             <div class="row d-flex align-items-center">
                                 <div class="col-7">
                                     <p class="m-0 fs-4 fw-bold"><?= $destination->title; ?></p>
-                                    <p class="m-0 fs-5 fw-light text-secondary"><?= ucwords(strtolower(strtr($destination->city, ['KOTA' => '', 'KABUPATEN ' => '']))); ?>, <?= ucwords(strtolower(province($destination->region_code))); ?></p>
+                                    <p class="m-0 fs-5 fw-light text-secondary"><?= ucwords(strtolower(strtr($destination->city, ['KOTA' => '', 'KAB. ' => '']))); ?>, <?= ucwords(strtolower(province($destination->region_code))); ?></p>
                                 </div>
                                 
                                 <div class="col-5 fs-6 text-end">
@@ -155,6 +155,11 @@
                                 <div class="col-12">
                                     <p class="m-0 fw-bold fs-5">Ulasan</p>
                                 </div>
+                                <?php if($total_review < 1) : ?>
+                                <div class="col-12">
+                                    <p class="m-0 fs-6">Tidak ada ulasan</p>
+                                </div>
+                                <?php else : ?>
                                 <div class="col-12 my-2">
                                     <div class="row">
                                         <div class="col-12">
@@ -167,11 +172,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if($total_review < 1) : ?>
-                                <div class="col-12">
-                                    <p class="m-0 fs-6">Tidak ada ulasan</p>
-                                </div>
-                                <?php else : ?>
                                 <div class="col-12 text-center">
                                     <a href="#">Lihat semua ulasan (<?= $total_review; ?>)</a>
                                 </div>

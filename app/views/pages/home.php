@@ -104,7 +104,7 @@
                               <div class="row d-flex align-items-center">
                                   <div class="col-12">
                                       <p class="m-0 fs-4 fw-bold"><?= $destination->title; ?></p>
-                                      <p class="m-0 fs-5 fw-light text-secondary"><?= ucwords(strtolower(strtr($destination->city, ['KOTA' => '', 'KABUPATEN ' => '']))); ?>, <?= ucwords(strtolower(province($destination->region_code))); ?></p>
+                                      <p class="m-0 fs-5 fw-light text-secondary"><?= ucwords(strtolower(strtr($destination->city, ['KOTA' => '', 'KAB. ' => '']))); ?>, <?= ucwords(strtolower(province($destination->region_code))); ?></p>
                                   </div>
                                   <div class="col-12 fs-6">
                                       <p class="m-0 text-secondary">
