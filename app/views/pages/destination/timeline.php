@@ -1,11 +1,11 @@
-<?php $this->load->view('pages/admin/partials/_header'); ?>
+<?php $this->load->view('partials/_header'); ?>
 
 <div id="db-wrapper">    
     <!-- navbar vertical -->
-    <?php $this->load->view('pages/admin/partials/_sidebar'); ?>
+    <?php $this->load->view('partials/_sidebar'); ?>
     <!-- Page content -->
     <div id="page-content">
-        <?php $this->load->view('pages/admin/partials/_topbar'); ?>
+        <?php $this->load->view('partials/_topbar'); ?>
         <!-- Container fluid -->
         <div class="bg-primary pt-10 pb-21"></div>
         <div class="container-fluid mt-n22 px-6">
@@ -114,4 +114,4 @@
         </div>
     </div>
 </div>
-<?php $this->load->view('pages/admin/partials/_footer'); ?>
+<?php $this->load->view('partials/_footer'); ?>
