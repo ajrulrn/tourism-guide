@@ -8,7 +8,8 @@ if (!function_exists('rating'))
         $CI = &get_instance();
         $CI->load->model('Destination_m');
         $Model = $CI->Destination_m;
-        return number_format($Model->get_rating($destination_id), 1, '.', '');
+        $rating = $Model->get_rating($destination_id);
+        return is_numeric($rating) ? number_format($rating, 1, '.', '') : $rating;
     }
 }
 
