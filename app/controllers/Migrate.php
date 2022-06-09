@@ -7,8 +7,7 @@ class Migrate extends CI_Controller
     {
         $this->load->library('migration');
 
-        $this->migration->latest();
-        echo "Migration Success";
+        if ($this->migration->latest()) echo "Migration Success";
     }
 
 }
