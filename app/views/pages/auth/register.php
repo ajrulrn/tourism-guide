@@ -47,9 +47,7 @@
                   <input type="checkbox" name="terms" class="form-check-input" id="agreeCheck">
                   <label class="form-check-label" for="agreeCheck"><span
                         class="fs-5">I agree to the <a
-                          href="https://m-akbarfauzi.github.io/wamanra-privacy/">Terms of
-                          Service </a>and
-                        <a href="terms-condition-page.html">Privacy Policy.</a></span></label>
+                          href="https://m-akbarfauzi.github.io/wamanra-privacy/">Privacy Policy.</a></span></label>
                 </div>
               </div>
               <div>
