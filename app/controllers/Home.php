@@ -12,7 +12,7 @@ class Home extends CI_Controller {
     public function index()
     {
         $data = [
-            'destinations' => Destination_m::get_published()
+            'destinations' => Destination_m::get_top_destination()
         ];
         $this->load->view('pages/home', $data);
     }

@@ -218,4 +218,15 @@ class Destination_m extends CI_Model {
         self::$ci->feedback         = $rating['feedback'];
         self::$ci->db->insert('ratings', self::$ci);
     }
+
+    public static function get_top_destination()
+    {
+        return self::$ci->db->select(self::$table.'.*, regions.name AS `city`')
+        ->from('ratings')
+        ->join(self::$table, self::$table.'.id = ratings.destination_id')
+        ->join('regions', 'regions.code = '.self::$table.'.region_code')
+        ->where(self::$table.'.is_published', 1)
+        ->group_by('ratings.destination_id')
+        ->get()->result();
+    }
 }
