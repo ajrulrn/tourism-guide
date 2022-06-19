@@ -89,4 +89,11 @@ class User_m extends CI_Model {
     {
         return self::$ci->db->get('levels')->result();
     }
+
+    public static function update_profile_by_username($username)
+    {
+        $post           = self::$ci->input->post();
+        self::$ci->name = $post['name'];
+        self::$ci->db->update(self::$table, self::$ci, ['username' => $username]);
+    }
 }
