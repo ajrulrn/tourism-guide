@@ -110,11 +110,12 @@ class Transaction_m extends CI_Model {
         self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
     }
 
-    public static function update_va_number($transaction_id, $va_number, $payment_type)
+    public static function update_va_number($transaction_id, $va_number, $payment_type, $expiration)
     {
-        self::$ci->va_number        = $va_number;
-        self::$ci->status           = 'Pending';
-        self::$ci->payment_method   = $payment_type;
+        self::$ci->va_number                    = $va_number;
+        self::$ci->status                       = 'Pending';
+        self::$ci->payment_method               = $payment_type;
+        self::$ci->transaction_expiration_date  = $expiration;
         self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
     }
 }

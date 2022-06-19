@@ -36,7 +36,7 @@ class Midtrans {
 
         curl_close($curl);
         $response = json_decode($response);
-        if ($response->payment_type == 'bank_transfer') $Model->update_va_number($response->order_id, $response->va_numbers[0]->va_number, $response->va_numbers[0]->bank);
+        if ($response->payment_type == 'bank_transfer') $Model->update_va_number($response->order_id, $response->va_numbers[0]->va_number, $response->va_numbers[0]->bank, date('Y-m-d H:i:s', strtotime('+1 day', strtotime($response->transaction_time))));
     }
 
     public static function notification_handler()

@@ -38,12 +38,10 @@
                             <div class="row mt-2">
                                 <div class="col">
                                     <p class="m-0 text-secondary fw-bold fs-4">Metode Pembayaran</p>
-                                    <div class="form-check text-secondary">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <img src="<?= base_url('assets/images/bca.png'); ?>" alt="" width="100">
-                                        </label>
-                                    </div>
+                                    <label class="payment mt-2">
+                                        <input type="radio" name="payment" checked> 
+                                        <span><i class="fa fa-bank"></i>  <img src="<?= base_url('assets/images/bca.png'); ?>" alt="" width="100"></span> 
+                                    </label>
                                     <input type="hidden" name="_transaction" value="<?= $transaction->id; ?>">
                                 </div>
                             </div>

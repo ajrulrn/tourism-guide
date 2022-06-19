@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="<?= base_url(); ?>assets/css/theme.min.css">
         <link rel="stylesheet" href="<?= base_url(); ?>assets/css/timeline.css">
         <link rel="stylesheet" href="<?= base_url(); ?>assets/css/chat.css">
+        <link rel="stylesheet" href="<?= base_url(); ?>assets/css/payment.css">
         
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
         <?php if ($this->router->class == 'transaction' && $this->router->method == 'detail') : ?>

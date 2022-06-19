@@ -91,10 +91,13 @@
                                 <?php if($transaction->status == 'Pending') : ?>
                                 <p class="mt-2 m-0 fw-bold">Metode Pembayaran</p>
                                 <p class="m-0">
-                                    <img src="<?= base_url('assets/images/BCA.png') ?>" alt="" width="100">
+                                    <label class="payment mt-2">
+                                        <input type="radio" name="payment" checked> 
+                                        <span><i class="fa fa-bank"></i>  <img src="<?= base_url('assets/images/bca.png'); ?>" alt="" width="100"></span> 
+                                    </label>
                                 </p>
-                                <p class="m-0">VA Number : <?= $transaction->va_number; ?></p>
-                                <p class="m-0">Bayar sebelum <span class="fw-bold"><?= date('d M Y H:i:s', strtotime($transaction->transaction_expiration_date)); ?></span></p>
+                                <p class="m-0 mt-2">VA Number <span class="badge bg-secondary"><?= $transaction->va_number; ?></span></p>
+                                <small class="m-0">Bayar sebelum <span class="fw-bold"><?= date('d M Y H:i:s', strtotime($transaction->transaction_expiration_date)); ?></span></small>
                                 <?php endif; ?>
                                 <div class="d-grid mt-2">
                                     <?php if($transaction->status == 'Pending') : ?>
