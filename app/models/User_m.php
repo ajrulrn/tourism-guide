@@ -96,4 +96,15 @@ class User_m extends CI_Model {
         self::$ci->name = $post['name'];
         self::$ci->db->update(self::$table, self::$ci, ['username' => $username]);
     }
+
+    public static function change_password_by_username($username)
+    {
+        $post = self::$ci->input->post();
+        $user = self::$ci->db->get_where(self::$table, ['username' => $username])->row();
+
+        if (password_verify($post['old_password'], $user->password)) {
+            self::$ci->password = password_hash($post['password'], PASSWORD_DEFAULT);
+            self::$ci->db->update(self::$table, self::$ci, ['username' => $username]);
+        }
+    }
 }
