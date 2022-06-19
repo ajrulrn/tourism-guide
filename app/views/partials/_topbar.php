@@ -85,18 +85,17 @@
                         <div class="px-4 pb-0 pt-2">
                             <div class="lh-1 ">
                                 <h5 class="mb-1"><?= current_user()->name; ?></h5>
-                                <a href="#" class="text-inherit fs-6">View my profile</a>
                             </div>
                             <div class=" dropdown-divider mt-3 mb-2"></div>
                         </div>
                         <ul class="list-unstyled">
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="<?= base_url('profile'); ?>">
                                     <i class="me-2 icon-xxs dropdown-item-icon" data-feather="user"></i>Edit Profile
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="<?= base_url('setting'); ?>">
                                     <i class="me-2 icon-xxs dropdown-item-icon" data-feather="settings"></i>Account Settings
                                 </a>
                             </li>
