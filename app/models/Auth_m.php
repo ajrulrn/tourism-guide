@@ -59,7 +59,7 @@ class Auth_m extends CI_Model {
             [
                 'field' => 'username',
                 'label' => 'Username',
-                'rules' => 'required|is_unique[users.username]'
+                'rules' => 'required|is_unique[users.username]|alpha_numeric'
             ],
             [
                 'field' => 'password',
@@ -86,12 +86,13 @@ class Auth_m extends CI_Model {
 
     public static function register()
     {
-        $user               = self::$ci->input->post();
-        self::$ci->name     = $user['name'];
-        self::$ci->username = $user['username'];
-        self::$ci->password = $user['password'];
-        self::$ci->email    = $user['email'];
-        self::$ci->level_id = 3;
+        $user                   = self::$ci->input->post();
+        self::$ci->name         = $user['name'];
+        self::$ci->username     = $user['username'];
+        self::$ci->password     = password_hash($user['password'], PASSWORD_DEFAULT);
+        self::$ci->email        = $user['email'];
+        self::$ci->level_id     = 3;
+        self::$ci->is_activate  = 1;
         self::$ci->db->insert(self::$table, self::$ci);
         return self::$ci->db->insert_id();
     }
