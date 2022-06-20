@@ -17,13 +17,13 @@
             <form action="<?= base_url('register/store'); ?>" method="post">
               <!-- Name -->
               <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" required="">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" id="name" class="form-control" name="name" placeholder="Nama Lengkap" required="">
               </div>
               <!-- Username -->
               <div class="mb-3">
-                <label for="username" class="form-label">User Name</label>
-                <input type="text" id="username" class="form-control" name="username" placeholder="User Name" required="">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" name="username" placeholder="Username" required="">
               </div>
               <!-- Email -->
               <div class="mb-3">
@@ -46,22 +46,21 @@
                 <div class="form-check custom-checkbox">
                   <input type="checkbox" name="terms" class="form-check-input" id="agreeCheck">
                   <label class="form-check-label" for="agreeCheck"><span
-                        class="fs-5">I agree to the <a
-                          href="https://m-akbarfauzi.github.io/wamanra-privacy/">Privacy Policy.</a></span></label>
+                        class="fs-5">Saya setuju terhadap <a
+                          href="https://m-akbarfauzi.github.io/wamanra-privacy/">Kebijakan Privasi.</a></span></label>
                 </div>
               </div>
               <div>
                 <!-- Button -->
                 <div class="d-grid">
                   <button type="submit" class="btn btn-primary">
-                    Create Free Account
+                    Daftar
                   </button>
                 </div>
 
                 <div class="d-md-flex justify-content-center mt-4">
                   <div class="mb-2 mb-md-0 text-center">
-                    <a href="<?= base_url('login'); ?>" class="fs-5">Already
-                        member? Login </a>
+                    Sudah punya akun?<a href="<?= base_url('login'); ?>" class="fs-5"> Login </a>
                   </div>
                 </div>
               </div>

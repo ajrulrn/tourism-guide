@@ -16,24 +16,14 @@
             <form action="<?= base_url('login/authenticate'); ?>" method="post">
               <!-- Username -->
               <div class="mb-3">
-                <label for="email" class="form-label">Username or email</label>
-                <input type="text" id="email" class="form-control" name="identity" placeholder="Email address here" required="">
+                <label for="email" class="form-label">Username</label>
+                <input type="text" id="email" class="form-control" name="identity" placeholder="Username here" required="">
               </div>
               <!-- Password -->
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" class="form-control" name="password" placeholder="**************" required="">
               </div>
-              <!-- Checkbox -->
-              <!-- <div class="d-lg-flex justify-content-between align-items-center
-                  mb-4">
-                <div class="form-check custom-checkbox">
-                  <input type="checkbox" class="form-check-input" id="rememberme">
-                  <label class="form-check-label" for="rememberme">Remember
-                      me</label>
-                </div>
-
-              </div> -->
               <div>
                 <!-- Button -->
                 <div class="d-grid">
@@ -42,8 +32,7 @@
                 
                 <div class="d-md-flex justify-content-center mt-4">
                   <div class="mb-2 mb-md-0 text-center">
-                    <a href="<?= base_url('register'); ?>" class="fs-5">Create An
-                        Account </a>
+                    <a href="<?= base_url('register'); ?>" class="fs-5">Daftar Akun </a>
                   </div>
 
                 </div>
