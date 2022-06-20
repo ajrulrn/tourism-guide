@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaction extends CI_Controller {
+class Transaction extends MX_Controller {
 
     public function __construct()
     {
@@ -12,8 +12,9 @@ class Transaction extends CI_Controller {
 
     public function index()
     {
+        $transactions = current_user()->level_id == ADMIN ? Transaction_m::get_all() : (current_user()->level_id == GUIDE ? Transaction_m::get_order_by_guide_id($this->session->userdata(SESSION_KEY)) : Transaction_m::get_by_user_id($this->session->userdata(SESSION_KEY)));
         $data = [
-            'transactions' => Transaction_m::get_all()
+            'transactions' => $transactions
         ];
         $this->load->view('pages/transaction/index', $data);
     }

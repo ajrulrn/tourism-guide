@@ -80,6 +80,7 @@
                         </div>
                     </div>
                 </div> -->
+                <?php if ($transactions) : ?>
                 <?php foreach($transactions as $item) : ?>
                 <div class="col-12 mb-3">
                     <a href="<?= $item->status == 'Menunggu Pembayaran' ? base_url('transaction/checkout/').$item->id : base_url('transaction/detail/').$item->id; ?>" class="text-decoration-none text-white">
@@ -106,6 +107,17 @@
                     </a>
                 </div>
                 <?php endforeach; ?>
+                <?php else :?>
+                <div class="col-12">
+                    <div class="card p-3 border-primary">
+                        <div class="row">
+                            <div class="col">
+                                <p class="m-0 text-center">Tidak ada transaksi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <?php else : ?>
             <div class="row mt-20 justify-content-center">
