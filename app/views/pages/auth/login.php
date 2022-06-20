@@ -9,7 +9,7 @@
           <!-- Card body -->
           <div class="card-body p-6">
             <div class="mb-4">
-              <a href="<?= base_url(); ?>"><img src="<?= base_url(); ?>/assets/images/brand/logo/logo-primary.svg" class="mb-2" alt=""></a>
+              <a href="<?= base_url(); ?>"><h3 class="text-primary">Wamanra</h3></a>
               <p class="mb-6">Masuk untuk melakukan pemesanan.</p>
             </div>
             <!-- Form -->
