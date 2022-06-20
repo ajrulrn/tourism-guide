@@ -171,7 +171,7 @@ class Destination_m extends CI_Model {
 
     public function get_sold($destination_id)
     {
-        return $this->db->get_where('transactions', ['destination_id' => $destination_id])->num_rows();
+        return $this->db->get_where('transactions', ['destination_id' => $destination_id, 'status' => 'SUCCESS'])->num_rows();
     }
 
     public static function get_review($destination_id)
