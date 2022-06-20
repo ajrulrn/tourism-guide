@@ -87,7 +87,7 @@
                         <div class="card p-3 borde border-primary">
                             <div class="row d-flex align-items-center">
                                 <div class="col-6">
-                                    <p class="m-0 text-secondary fw-bold"><?= $item->id; ?></p>
+                                    <p class="m-0 text-secondary fw-bold"><?= strtoupper(substr(md5($item->id), 23, 8)); ?></p>
                                     <p class="m-0 text-secondary"><?= $item->destination; ?></p>
                                     <p class="m-0 text-secondary fs-6 badge 
                                     <?php if ($item->status == 'SUCCESS') : ?>
