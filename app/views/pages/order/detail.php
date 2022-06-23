@@ -79,6 +79,7 @@
                                 <p class="m-0 text-secondary fw-bold"><?= strtoupper(substr(md5($transaction->id), 23, 8)); ?></p>
                                 <p class="m-0 text-secondary"><?= $transaction->destination; ?></p>
                                 <p class="m-0 text-secondary"><?= $transaction->num_of_tourist; ?> Person</p>
+                                <p class="m-0 text-secondary">Rp<?= number_format(($transaction->price * $transaction->num_of_tourist) - ($transaction->price * $transaction->num_of_tourist) * 5 /100, 0, '', ','); ?></p>
                                 <p class="m-0 text-secondary"><?= date('d M Y', strtotime($transaction->trip_date)); ?></p>
                                 <p class="m-0 text-secondary fs-6 badge 
                                 <?php if ($transaction->status == 'SUCCESS') : ?>
