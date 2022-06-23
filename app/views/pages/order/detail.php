@@ -76,7 +76,7 @@
                     <div class="card p-3">
                         <div class="row d-flex align-items-center">
                             <div class="col-12">
-                                <p class="m-0 text-secondary fw-bold"><?= $transaction->id; ?></p>
+                                <p class="m-0 text-secondary fw-bold"><?= strtoupper(substr(md5($transaction->id), 23, 8)); ?></p>
                                 <p class="m-0 text-secondary"><?= $transaction->destination; ?></p>
                                 <p class="m-0 text-secondary"><?= $transaction->num_of_tourist; ?> Person</p>
                                 <p class="m-0 text-secondary"><?= date('d M Y', strtotime($transaction->trip_date)); ?></p>
