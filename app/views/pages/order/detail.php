@@ -97,10 +97,13 @@
                                         <a href="#" class="mt-1 btn btn-primary btn-sm rounded">Mulai Perjalanan</a>
                                         <?php endif; ?>
                                         <?php if ($transaction->status == 'Sedang Berlangsung') : ?>
-                                        <a href="#" class="btn border-secondary btn-sm rounded">
+                                        <a href="#" class="mt-1 btn btn-danger btn-sm rounded">Akhiri Perjalanan</a>
+                                        <?php endif; ?>
+                                        <?php if($transaction->status == 'Siap diproses' || $transaction->status == 'Sedang Berlangsung') : ?>
+                                        <hr>
+                                        <a href="<?= base_url('chat/detail/').$transaction->user_id; ?>" class="btn border-secondary btn-sm rounded">
                                             <i data-feather="message-circle" class="nav-icon icon-xs pb-1"></i> Chat
                                         </a>
-                                        <a href="#" class="mt-1 btn btn-danger btn-sm rounded">Akhiri Perjalanan</a>
                                         <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
