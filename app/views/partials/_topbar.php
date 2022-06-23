@@ -69,11 +69,6 @@
                         </div>
                     </div>
                 </li> -->
-                <li>
-                    <a href="<?= base_url('chat'); ?>" class="btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted">
-                        <i class="icon-xs" data-feather="message-circle"></i>
-                    </a>
-                </li>
                 <!-- List -->
                 <li class="dropdown ms-2">
                     <a class="rounded-circle" href="#" role="button" id="dropdownUser" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
