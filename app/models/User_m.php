@@ -119,4 +119,14 @@ class User_m extends CI_Model {
         self::$ci->is_activate = 0;
         self::$ci->db->update(self::$table, self::$ci, ['id' => $id]);
     }
+
+    public static function get_guides()
+    {
+        return self::$ci->db->get_where(self::$table, ['level_id' => GUIDE])->num_rows();
+    }
+
+    public static function get_tourists()
+    {
+        return self::$ci->db->get_where(self::$table, ['level_id' => TOURIST])->num_rows();
+    }
 }

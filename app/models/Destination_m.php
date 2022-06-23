@@ -229,4 +229,20 @@ class Destination_m extends CI_Model {
         ->group_by('ratings.destination_id')
         ->get()->result();
     }
+
+    public static function get_total()
+    {
+        return self::$ci->db->count_all_results(self::$table);
+    }
+
+    public static function get_most_visited()
+    {
+        return self::$ci->db->select('count(transactions.destination_id) AS `total`, '.self::$table.'.title')
+        ->from('transactions')
+        ->join(self::$table, self::$table.'.id = transactions.destination_id')
+        ->where('transactions.status', 'SUCCESS')
+        ->group_by('transactions.destination_id')
+        ->limit(5)
+        ->get()->result();
+    }
 }

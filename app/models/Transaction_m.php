@@ -118,4 +118,17 @@ class Transaction_m extends CI_Model {
         self::$ci->transaction_expiration_date  = $expiration;
         self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
     }
+
+    public static function get_total()
+    {
+        return self::$ci->db->count_all_results(self::$table);
+    }
+
+    public static function get_latest_transactions()
+    {
+        return self::$ci->db->order_by('inserted_at', 'DESC')
+        ->limit(5)
+        ->get(self::$table)->result();
+    }
+
 }
