@@ -206,24 +206,27 @@
             </div>
             <div class="modal-body pt-0">
                 <div class="row">
+                    <?php if (current_user()->level_id == GUIDE) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/edit/').$destination->id; ?>" class="btn text-start">Ubah</a>
                     </div>
+                    <?php endif; ?>
                     <?php if ($destination->is_published) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/unpublish/').$destination->id; ?>" class="btn text-start">Unpublish</a>
                     </div>
                     <?php endif; ?>
-                    <?php if (!$destination->is_published && $destination->is_have_timeline) : ?>
+                    <?php if (!$destination->is_published && $destination->is_have_timeline && current_user()->level_id == GUIDE) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/publish/').$destination->id; ?>" class="btn text-start">Publish</a>
                     </div>
                     <?php endif; ?>
-                    <?php if ($destination->is_have_timeline) : ?>
+                    <?php if ($destination->is_have_timeline && current_user()->level_id == GUIDE) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/delete_timeline/').$destination->id; ?>" class="btn text-start">Hapus Timeline</a>
                     </div>
-                    <?php else : ?>
+                    <?php endif; ?>
+                    <?php if (!$destination->is_have_timeline && current_user()->level_id == GUIDE) : ?>
                     <div class="col-12 d-grid border-bottom">
                         <a href="<?= base_url('destination/timeline/').$destination->id; ?>" class="btn text-start">Atur Timeline</a>
                     </div>
