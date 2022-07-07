@@ -90,7 +90,7 @@
                                     <p class="m-0 text-secondary fw-bold"><?= strtoupper(substr(md5($item->id), 23, 8)); ?></p>
                                     <p class="m-0 text-secondary"><?= $item->destination; ?></p>
                                     <p class="m-0 text-secondary fs-6 badge 
-                                    <?php if ($item->status == 'SUCCESS') : ?>
+                                    <?php if ($item->status == 'SUCCESS' || $item->status == 'Selesai') : ?>
                                     bg-light-success text-dark-success
                                     <?php elseif($item->status == 'Dibatalkan') : ?>
                                     bg-light-danger text-dark-danger
