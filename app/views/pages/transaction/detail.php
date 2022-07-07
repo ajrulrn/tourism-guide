@@ -106,7 +106,7 @@
                                     <a href="<?= base_url('chat/detail/').$transaction->destination_user_id; ?>" class="btn border-secondary btn-sm rounded">
                                         <i data-feather="message-circle" class="nav-icon icon-xs pb-1"></i> Chat
                                     </a>
-                                    <?php elseif($transaction->status == 'SUCCESS') : ?>
+                                    <?php elseif($transaction->status == 'SUCCESS' || $transaction->status == 'Selesai') : ?>
                                         <?php if (!is_rated($transaction->id)) : ?>
                                         <button type="button" class="btn btn-primary btn-sm rounded" data-bs-toggle="modal" data-bs-target="#exampleModal-2">Beri Ulasan</button>
                                         <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
