@@ -28,18 +28,18 @@ class Order extends CI_Controller {
     public function start($transaction_id)
     {
         Transaction_m::start($transaction_id);
-        redirect('order/'.$transaction_id);
+        redirect('order/detail/'.$transaction_id);
     }
 
     public function stop($transaction_id)
     {
         Transaction_m::stop($transaction_id);
-        redirect('order/'.$transaction_id);
+        redirect('order/detail/'.$transaction_id);
     }
 
     public function cancel($transaction_id)
     {
         Transaction_m::cancel($transaction_id);
-        redirect('order/'.$transaction_id);
+        redirect('order/detail/'.$transaction_id);
     }
 }
