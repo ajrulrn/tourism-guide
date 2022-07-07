@@ -82,7 +82,7 @@
                                 <p class="m-0 text-secondary">Rp<?= number_format(($transaction->price * $transaction->num_of_tourist) - ($transaction->price * $transaction->num_of_tourist) * 5 /100, 0, '', ','); ?></p>
                                 <p class="m-0 text-secondary"><?= date('d M Y', strtotime($transaction->trip_date)); ?></p>
                                 <p class="m-0 text-secondary fs-6 badge 
-                                <?php if ($transaction->status == 'SUCCESS') : ?>
+                                <?php if ($transaction->status == 'SUCCESS' || $transaction->status == 'Selesai') : ?>
                                 bg-light-success text-dark-success
                                 <?php elseif($transaction->status == 'Dibatalkan') : ?>
                                 bg-light-danger text-dark-danger
