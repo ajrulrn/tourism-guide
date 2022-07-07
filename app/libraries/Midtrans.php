@@ -93,7 +93,7 @@ class Midtrans {
         $response = json_decode($response);
         if ($response->transaction_status != 'pending') {
             if ($response->transaction_status == 'settlement') $Model->update_status($transaction_id, 'Siap diproses');
-            if ($response->transaction_status == 'expire') $Model->update_status($transaction_id, 'Batal');
+            if ($response->transaction_status == 'expire') $Model->update_status($transaction_id, 'Dibatalkan');
         }
     }
     
