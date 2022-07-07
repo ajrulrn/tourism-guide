@@ -98,7 +98,7 @@ class Transaction_m extends CI_Model {
 
     public function check_rate($transaction_id)
     {
-        $transaction = self::$ci->db->get_where('ratings', ['transaction_id' => $transaction_id])->row();
+        $transaction = self::$ci->db->get_where('ratings', ['transaction_id' => $transaction_id, 'user_id' => $this->session->userdata(SESSION_KEY)])->row();
         if ($transaction) return true;
         return false;
     }
