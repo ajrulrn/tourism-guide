@@ -245,4 +245,9 @@ class Destination_m extends CI_Model {
         ->limit(5)
         ->get()->result();
     }
+
+    public static function get_group_timeline($destination_id)
+    {
+        return self::$ci->db->group_by('day')->get_where('destination_timelines', ['destination_id' => $destination_id])->result();
+    }
 }

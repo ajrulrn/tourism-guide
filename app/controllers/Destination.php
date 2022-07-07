@@ -31,9 +31,11 @@ class Destination extends CI_Controller {
     public function detail($id)
     {
         $data = [
-            'destination'   => Destination_m::get_by_id($id),
-            'review'        => Destination_m::get_review($id),
-            'total_review'  => Destination_m::get_total_review($id)
+            'destination'       => Destination_m::get_by_id($id),
+            'review'            => Destination_m::get_review($id),
+            'total_review'      => Destination_m::get_total_review($id),
+            'timelines'         => Destination_m::get_group_timeline($id),
+            'detail_timelines'  => Destination_m::get_timelines($id)
         ];
         $this->load->view('pages/destination/detail', $data);
     }

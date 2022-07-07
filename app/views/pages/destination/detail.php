@@ -136,18 +136,25 @@
                             <div class="row mt-2">
                                 <div class="col-12">
                                     <div class="accordion" id="accordionExample">
+                                        <?php foreach($timelines as $index => $item) : ?>
                                         <div class="accordion-item bg-white">
                                             <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Timeline
+                                            <button class="accordion-button bg-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#timeline<?= $index; ?>" aria-expanded="false" aria-controls="timeline<?= $index; ?>">
+                                                Hari ke <?= $item->day; ?>
                                             </button>
                                             </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div id="timeline<?= $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
-                                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                    <?php foreach($detail_timelines as $detail) : ?>
+                                                    <?php if ($item->day == $detail->day) : ?>
+                                                    <p class="m-0"><strong><?= $detail->time; ?></strong></p>
+                                                    <p class="m-0 mb-1"><?= $detail->description; ?></p>
+                                                    <?php endif; ?>
+                                                    <?php endforeach; ?>
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
                             </div>
