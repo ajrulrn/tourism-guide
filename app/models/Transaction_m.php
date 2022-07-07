@@ -131,4 +131,21 @@ class Transaction_m extends CI_Model {
         ->get(self::$table)->result();
     }
 
+    public static function start($transaction_id)
+    {
+        self::$ci->status = 'Sedang Berlangsung';
+        self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
+    }
+
+    public static function stop($transaction_id)
+    {
+        self::$ci->status = 'Selesai';
+        self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
+    }
+
+    public static function cancel($transaction_id)
+    {
+        self::$ci->status = 'Dibatalkan';
+        self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
+    }
 }

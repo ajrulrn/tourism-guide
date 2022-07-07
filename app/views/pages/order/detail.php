@@ -93,11 +93,11 @@
                                 <?php if($transaction->status != 'SUCCESS' && $transaction->status != 'Dibatalkan') : ?>
                                     <div class="d-grid mt-3">
                                         <?php if ($transaction->status == 'Siap diproses') : ?>
-                                        <a href="#" class="btn btn-sm rounded border-secondary">Batalkan</a>
-                                        <a href="#" class="mt-1 btn btn-primary btn-sm rounded">Mulai Perjalanan</a>
+                                        <a href="<?= base_url('order/cancel/').$transaction->id; ?>" class="btn btn-sm rounded border-secondary">Batalkan</a>
+                                        <a href="<?= base_url('order/start/').$transaction->id; ?>" class="mt-1 btn btn-primary btn-sm rounded">Mulai Perjalanan</a>
                                         <?php endif; ?>
                                         <?php if ($transaction->status == 'Sedang Berlangsung') : ?>
-                                        <a href="#" class="mt-1 btn btn-danger btn-sm rounded">Akhiri Perjalanan</a>
+                                        <a href="<?= base_url('order/stop/').$transaction->id; ?>" class="mt-1 btn btn-danger btn-sm rounded">Akhiri Perjalanan</a>
                                         <?php endif; ?>
                                         <?php if($transaction->status == 'Siap diproses' || $transaction->status == 'Sedang Berlangsung') : ?>
                                         <hr>
