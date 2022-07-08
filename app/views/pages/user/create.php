@@ -26,7 +26,7 @@
                     <!-- card  -->
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?= base_url('admin/user/store') ?>" method="post">
+                            <form action="<?= base_url('user/store') ?>" method="post">
                                 <div class="form-group row">
                                     <label for="name">Name <span class="text-danger">*</span></label>
                                     <div class="col">
