@@ -240,4 +240,14 @@ class Destination_m extends CI_Model {
     {
         return self::$ci->db->group_by('day')->get_where('destination_timelines', ['destination_id' => $destination_id])->result();
     }
+
+    public static function reviews($destination_id)
+    {
+        return self::$ci->db->select('ratings.*, users.name AS user')
+        ->from('ratings')
+        ->join('users', 'users.id = ratings.user_id')
+        ->where('ratings.destination_id', $destination_id)
+        ->order_by('ratings.inserted_at', 'DESC')
+        ->get()->result();
+    }
 }

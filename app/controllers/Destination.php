@@ -155,4 +155,13 @@ class Destination extends CI_Controller {
         Destination_m::unpublish($id);
         redirect('destination');
     }
+
+    public function reviews($destination_id)
+    {
+        $data = [
+            'reviews' => Destination_m::reviews($destination_id),
+            'destination' => Destination_m::get_by_id($destination_id)
+        ];
+        $this->load->view('pages/destination/review', $data);
+    }
 }

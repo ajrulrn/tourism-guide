@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <a href="#">Lihat semua ulasan (<?= $total_review; ?>)</a>
+                                    <a href="<?= base_url('destination/reviews/').$destination->id; ?>">Lihat semua ulasan (<?= $total_review; ?>)</a>
                                 </div>
                                 <?php endif; ?>
                             </div>
