@@ -162,7 +162,7 @@
                                         <td class="align-middle">Rp<?= number_format($item->subtotal, 0, '', ','); ?></td>
                                         <td class="align-middle">
                                             <?php if($item->status == 'SUCCESS' || $item->status == 'Selesai') : ?>
-                                            <span class="badge bg-success">Sukses</span>
+                                            <span class="badge bg-success">Selesai</span>
                                             <?php elseif($item->status == 'Batal') : ?>
                                             <span class="badge bg-danger"><?= $item->status; ?></span>
                                             <?php else : ?>
