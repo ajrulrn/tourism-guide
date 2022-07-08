@@ -161,7 +161,7 @@
                                         </td>
                                         <td class="align-middle">Rp<?= number_format($item->subtotal, 0, '', ','); ?></td>
                                         <td class="align-middle">
-                                            <?php if($item->status == 'SUCCESS') : ?>
+                                            <?php if($item->status == 'SUCCESS' || $item->status == 'Selesai') : ?>
                                             <span class="badge bg-success">Sukses</span>
                                             <?php elseif($item->status == 'Batal') : ?>
                                             <span class="badge bg-danger"><?= $item->status; ?></span>
