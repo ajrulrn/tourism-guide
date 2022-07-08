@@ -79,4 +79,17 @@ class Transaction extends MX_Controller {
         Midtrans::check_status($transaction_id);
         redirect('transaction/detail/'.$transaction_id);
     }
+
+    public function save_rating($transaction_id)
+    {
+        $this->form_validation->set_rules('rating', 'Rating', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $flashdata = '';
+            $this->session->set_flashdata('');
+        }
+        
+        Transaction_m::save_rating($transaction_id);
+        redirect('transaction');
+    }
 }

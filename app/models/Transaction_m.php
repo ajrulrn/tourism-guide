@@ -153,4 +153,16 @@ class Transaction_m extends CI_Model {
     {
         return self::$ci->db->get_where('ratings', ['transaction_id' => $transaction_id])->row();
     }
+
+    public static function save_rating($transaction_id)
+    {
+        $transaction                = self::get_by_id($transaction_id);
+        $rating                     = self::$ci->input->post();
+        self::$ci->destination_id   = $transaction->destination_id;
+        self::$ci->user_id          = self::$ci->session->userdata(SESSION_KEY);
+        self::$ci->rate             = $rating['rating'];
+        self::$ci->feedback         = $rating['feedback'];
+        self::$ci->transaction_id   = $transaction_id;
+        self::$ci->db->insert('ratings', self::$ci);
+    }
 }

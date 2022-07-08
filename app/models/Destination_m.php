@@ -209,16 +209,6 @@ class Destination_m extends CI_Model {
         self::$ci->db->update(self::$table, ['is_published' => 0], ['id' => $destination_id]);
     }
 
-    public static function save_rating($destination_id)
-    {
-        $rating                     = self::$ci->input->post();
-        self::$ci->destination_id   = $destination_id;
-        self::$ci->user_id          = self::$ci->session->userdata(SESSION_KEY);
-        self::$ci->rate             = $rating['rating'];
-        self::$ci->feedback         = $rating['feedback'];
-        self::$ci->db->insert('ratings', self::$ci);
-    }
-
     public static function get_top_destination()
     {
         return self::$ci->db->select(self::$table.'.*, regions.name AS `city`')

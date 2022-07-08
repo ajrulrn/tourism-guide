@@ -112,7 +112,7 @@
                                         <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog fixed-bottom mb-0 mx-0" role="document" style="max-width:100%;">
                                                 <div class="modal-content">
-                                                    <form action="<?= base_url('destination/save_rating/').$transaction->destination_id; ?>" method="post">
+                                                    <form action="<?= base_url('transaction/save_rating/').$transaction->id; ?>" method="post">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Beri Ulasan</h5>
                                                         </div>
