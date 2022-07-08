@@ -148,4 +148,9 @@ class Transaction_m extends CI_Model {
         self::$ci->status = 'Dibatalkan';
         self::$ci->db->update(self::$table, self::$ci, ['id' => $transaction_id]);
     }
+
+    public static function get_rating($transaction_id)
+    {
+        return self::$ci->db->get_where('ratings', ['transaction_id' => $transaction_id])->row();
+    }
 }

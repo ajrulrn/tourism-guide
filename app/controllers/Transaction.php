@@ -22,7 +22,8 @@ class Transaction extends MX_Controller {
     public function detail($transaction_id=null)
     {
         $data = [
-            'transaction' => Transaction_m::get_by_id($transaction_id)
+            'transaction'   => Transaction_m::get_by_id($transaction_id),
+            'review'        => Transaction_m::get_rating($transaction_id)
         ];
         $this->load->view('pages/transaction/detail', $data);
     }
