@@ -63,6 +63,7 @@
                 </div>
                 <?php endforeach; ?>
             </div>
+            <?php if ($this->session->flashdata('admin_user')) : ?>
             <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11; width:100%;">
                 <div class="toast show justify-content-center align-items-center text-white mx-aut bg-<?= $this->session->flashdata('admin_user')['status']; ?> border-0" role="alert" aria-live="assertive" aria-atomic="true" style="width:100%">
                     <div class="d-flex">
@@ -71,6 +72,7 @@
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>

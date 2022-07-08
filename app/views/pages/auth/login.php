@@ -43,14 +43,16 @@
         </div>
       </div>
     </div>
+    <?php if($this->session->flashdata('alert_login')) : ?>
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11; width:100%;">
-          <div class="toast show justify-content-center align-items-center text-white mx-aut bg-<?= $this->session->flashdata('alert_login')['status']; ?> border-0" role="alert" aria-live="assertive" aria-atomic="true" style="width:100%">
-              <div class="d-flex">
-                  <div class="toast-body"><?= $this->session->flashdata('alert_login')['value']; ?></div>
-                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-              </div>
-          </div>
-      </div>
+        <div class="toast show justify-content-center align-items-center text-white mx-aut bg-<?= $this->session->flashdata('alert_login')['status']; ?> border-0" role="alert" aria-live="assertive" aria-atomic="true" style="width:100%">
+            <div class="d-flex">
+                <div class="toast-body"><?= $this->session->flashdata('alert_login')['value']; ?></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
   </div>
   <!-- Scripts -->
   <!-- Libs JS -->
