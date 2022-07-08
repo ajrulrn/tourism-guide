@@ -15,7 +15,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mb-2 mb-lg-0">
                                 <h3 class="mb-0 fw-bold text-primary">
-                                    <a href="<?= base_url('destination'); ?>">
+                                    <a href="<?= base_url('destination/detail/').$destination->id; ?>">
                                         <i class="nav-icon" data-feather="arrow-left"></i>
                                     </a>
                                     Ulasan - <?= $destination->title; ?>
