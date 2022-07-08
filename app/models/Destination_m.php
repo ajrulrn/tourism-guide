@@ -230,7 +230,7 @@ class Destination_m extends CI_Model {
         return self::$ci->db->select('count(transactions.destination_id) AS `total`, '.self::$table.'.title')
         ->from('transactions')
         ->join(self::$table, self::$table.'.id = transactions.destination_id')
-        ->where('transactions.status', 'SUCCESS')
+        ->where('transactions.status', 'Selesai')
         ->group_by('transactions.destination_id')
         ->limit(5)
         ->get()->result();
