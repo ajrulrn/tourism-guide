@@ -99,8 +99,8 @@ class Transaction_m extends CI_Model {
     public function check_rate($transaction_id)
     {
         $transaction = self::$ci->db->get_where('ratings', ['transaction_id' => $transaction_id, 'user_id' => self::$ci->session->userdata(SESSION_KEY)])->row();
-        if ($transaction) return false;
-        return true;
+        $transaction ? true : false;
+        return $transaction;
     }
 
     public static function update_status($transaction_id, $status)
