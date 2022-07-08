@@ -11,6 +11,7 @@
             <div class="mb-4">
               <a href="<?= base_url(); ?>"><h3 class="text-primary">Wamanra</h3></a>
               <p class="mb-6">Masuk untuk melakukan pemesanan.</p>
+              <?= $this->session->flashdata('alert_login'); ?>
             </div>
             <!-- Form -->
             <form action="<?= base_url('login/authenticate'); ?>" method="post">

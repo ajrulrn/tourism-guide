@@ -18,7 +18,10 @@ class Login extends CI_Controller {
     public function authenticate()
     {
         $authenticate = Auth_m::login();
-        if (!$authenticate) redirect('login');
+        if (!$authenticate) {
+            $this->session->set_flashdata('alert_login', '<div class="alert alert-danger" role="alert">Username atau password salah!</div>');
+            redirect('login');
+        }
 
         if (current_user()->level_id == ADMIN) redirect('dashboard');
         if (current_user()->level_id == GUIDE) redirect('order');

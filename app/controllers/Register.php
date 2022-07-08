@@ -18,14 +18,14 @@ class Register extends CI_Controller {
     public function store()
     {
         $validation = $this->form_validation;
-        $flashdata  = '';
+        $flashdata  = '<div class="alert alert-danger" role="alert">Registrasi gagal, isilah form dengan benar!</div>';
         $validation->set_rules(Auth_m::register_rules());
         if ($validation->run()) {
             Auth_m::register();
-            $flashdata = '';
+            $flashdata = '<div class="alert alert-success" role="alert">Registrasi berhasil, silahkan login untuk masuk!</div>';
         }
-        
-        $this->session->set_flashdata('');
+
+        $this->session->set_flashdata('alert_login', $flashdata);
         redirect('login');
     }
 
