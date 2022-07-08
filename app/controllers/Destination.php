@@ -73,11 +73,11 @@ class Destination extends CI_Controller {
     public function store()
     {
         $validation = $this->form_validation;
-        $flashdata = 'Destinasi gagal ditambah';
+        $flashdata = array('value' => 'Destinasi gagal dibuat, mohon isi form dengan benar!', 'status' => 'danger');
         $validation->set_rules(Destination_m::rules());
         if ($validation->run()) {
             Destination_m::save();
-            $flashdata = 'Destinasi berhasil ditambah';
+            $flashdata = array('value' => 'Destinasi baru berhasil dibuat!', 'status' => 'success');
         }
 
         $this->session->set_flashdata('alert_destination', $flashdata);

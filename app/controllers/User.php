@@ -28,11 +28,11 @@ class User extends MX_Controller {
     public function store()
     {
         $validation = $this->form_validation;
-        $flashdata  = '<div class="alert alert-danger alert-dismissible fade show" role="alert">User gagal dibuat, mohon isi form dengan benar!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+        $flashdata  = array('value' => 'User gagal dibuat, mohon isi form dengan benar!', 'status' => 'danger');
         $validation->set_rules(User_m::rules());
         if ($validation->run()) {
             User_m::save();
-            $flashdata  = '<div class="alert alert-success alert-dismissible fade show" role="alert">User baru berhasil dibuat!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+            $flashdata  = array('value' => 'User baru berhasil dibuat!', 'status' => 'success');
         }
 
         $this->session->set_flashdata('admin_user', $flashdata);

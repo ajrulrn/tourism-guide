@@ -39,7 +39,6 @@
                 </div>
             </div>
             <div class="row mt-6">
-                <?= $this->session->userdata('admin_user'); ?>
                 <?php foreach ($users as $user) : ?>
                 <div class="col-12 mb-1">
                     <a href="<?= base_url('user/edit/').$user->id; ?>">
@@ -63,6 +62,14 @@
                     </a>
                 </div>
                 <?php endforeach; ?>
+            </div>
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11; width:100%;">
+                <div class="toast show justify-content-center align-items-center text-white mx-aut bg-<?= $this->session->flashdata('admin_user')['status']; ?> border-0" role="alert" aria-live="assertive" aria-atomic="true" style="width:100%">
+                    <div class="d-flex">
+                        <div class="toast-body"><?= $this->session->flashdata('admin_user')['value']; ?></div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

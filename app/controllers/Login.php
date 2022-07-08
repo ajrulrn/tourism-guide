@@ -19,7 +19,7 @@ class Login extends CI_Controller {
     {
         $authenticate = Auth_m::login();
         if (!$authenticate) {
-            $this->session->set_flashdata('alert_login', '<div class="alert alert-danger" role="alert">Username atau password salah!</div>');
+            $this->session->set_flashdata('alert_login', array('value' => 'Username atau password salah!', 'status' => 'danger'));
             redirect('login');
         }
 
