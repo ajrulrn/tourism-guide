@@ -39,52 +39,7 @@
                 </div>
             </div>
             <div class="row mt-6">
-                <!-- <div class="col-md-12 col-12">
-                    <?= $this->session->userdata('admin_user'); ?>
-                    <div class="card">
-                        <div class="table-responsive pt-4">
-                            <table class="table text-nowrap">
-                                <thead class="table-light">
-                                    <tr>
-                                    <th>Name</th>
-                                    <th>Level</th>
-                                    <th>Status</th>
-                                    <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach($users as $index => $user) : ?>
-                                    <tr>
-                                        <td class="align-middle">
-                                                    <h5 class="fw-bold mb-1">
-                                                            <?= $user->name; ?>
-                                                    </h5>
-                                        </td>
-                                        <td class="align-middle">
-                                            <?= $user->level; ?>
-                                        </td>
-                                        <td class="align-middle">
-                                            <span class="badge <?= $user->is_activate ? 'bg-light-info text-dark-info' : 'bg-light-warning text-dark-warning' ?>"><?= $user->is_activate ? 'Active' : 'Inactive' ?></span>
-                                        </td>
-                                        <td class="align-middle text-dark">
-                                            <div class="dropdown dropstart">
-                                                <a class="text-muted text-primary-hover" href="#" role="button" id="dropdownTeamThree" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="icon-xxs" data-feather="more-vertical"></i>
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownTeamThree">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div> -->
+                <?= $this->session->userdata('admin_user'); ?>
                 <?php foreach ($users as $user) : ?>
                 <div class="col-12 mb-1">
                     <a href="<?= base_url('user/edit/').$user->id; ?>">
